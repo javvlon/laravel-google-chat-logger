@@ -3,6 +3,11 @@
     "description": "A Laravel package for logging errors to Google Chat",
     "type": "library",
     "license": "MIT",
+    "tags": [
+        "laravel",
+        "google chat",
+        "logger"
+    ],
     "authors": [
         {
             "name": "Javlon Tulkinov",
