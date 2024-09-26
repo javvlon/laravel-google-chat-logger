@@ -1,0 +1,31 @@
+{
+    "name": "javvlon/laravel-google-chat-logger",
+    "description": "A Laravel package for logging errors to Google Chat",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Javlon Tulkinov",
+            "email": "javlontulkinov94@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "illuminate/support": "^8.0|^9.0|^10.0",
+        "guzzlehttp/guzzle": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Javvlon\\GoogleChatLogger\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Javvlon\\GoogleChatLogger\\GoogleChatLoggerServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
