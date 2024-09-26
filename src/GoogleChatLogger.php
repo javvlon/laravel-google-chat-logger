@@ -26,7 +26,7 @@ class GoogleChatLogger extends AbstractProcessingHandler
                 env('APP_ENV'),
                 $record['datetime']->format('Y-m-d H:i:s'),
                 $record['message'],
-                $record['context'] ? json_encode($record['context'], JSON_PRETTY_PRINT) : 'No Context'
+                $record['context'] ? json_encode($record['context'], JSON_PRETTY_PRINT) : ''
             )
         ];
 
