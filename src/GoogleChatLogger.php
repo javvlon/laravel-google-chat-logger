@@ -8,14 +8,31 @@ use Illuminate\Support\Facades\Http;
 
 class GoogleChatLogger extends AbstractProcessingHandler
 {
-    protected $webhookUrl;
+    /**
+     * The webhook URL for Google Chat
+     *
+     * @var string
+     */
+    protected string $webhookUrl;
 
+    /**
+     * Create a new Google Chat Logger instance
+     *
+     * @param string $webhookUrl
+     * @param int $level
+     * @param bool $bubble
+     */
     public function __construct($webhookUrl, $level = Logger::ERROR, bool $bubble = true)
     {
         $this->webhookUrl = $webhookUrl;
         parent::__construct($level, $bubble);
     }
 
+    /**
+     * Write a log record to Google Chat
+     *
+     * @param array $record
+     */
     protected function write(array $record): void
     {
         $message = [
