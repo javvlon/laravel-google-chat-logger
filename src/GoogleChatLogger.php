@@ -3,6 +3,7 @@
 namespace Javvlon\GoogleChatLogger;
 
 use Monolog\Logger;
+use Monolog\LogRecord;
 use Monolog\Handler\AbstractProcessingHandler;
 use Illuminate\Support\Facades\Http;
 
@@ -22,7 +23,7 @@ class GoogleChatLogger extends AbstractProcessingHandler
      * @param int $level
      * @param bool $bubble
      */
-    public function __construct($webhookUrl, $level = Logger::ERROR, bool $bubble = true)
+    public function __construct(string $webhookUrl, $level = Logger::ERROR, bool $bubble = true)
     {
         $this->webhookUrl = $webhookUrl;
         parent::__construct($level, $bubble);
@@ -31,9 +32,9 @@ class GoogleChatLogger extends AbstractProcessingHandler
     /**
      * Write a log record to Google Chat
      *
-     * @param array $record
+     * @param LogRecord $record
      */
-    protected function write(array $record): void
+    protected function write(LogRecord $record): void
     {
         $message = [
             'text' => sprintf(
