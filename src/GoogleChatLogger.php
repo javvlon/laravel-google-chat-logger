@@ -39,12 +39,12 @@ class GoogleChatLogger extends AbstractProcessingHandler
         $message = [
             'text' => sprintf(
                 "*[%s]* %s (%s) %s\n%s\n%s",
-                $record['level_name'],
+                $record->level->getName(),
                 env('APP_NAME'),
                 env('APP_ENV'),
-                $record['datetime']->format('Y-m-d H:i:s'),
-                $record['message'],
-                $record['context'] ? json_encode($record['context'], JSON_PRETTY_PRINT) : ''
+                $record->datetime->format('Y-m-d H:i:s'),
+                $record->message,
+                $record->context ? json_encode($record->context, JSON_PRETTY_PRINT) : ''
             )
         ];
 
