@@ -1,6 +1,6 @@
 # Laravel Google Chat Logger
 
-**Laravel Google Chat Logger** is a simple package that integrates Google Chat logging with Laravel. It sends logs directly to a Google Chat room using a webhook, making it easy to track errors or important events in your Laravel application.
+Laravel Google Chat Logger is a simple package that integrates Google Chat logging with Laravel. It sends logs directly to a Google Chat room using a webhook, making it easy to track errors or important events in your Laravel application.
 
 ## Features
 
